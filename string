@@ -22,7 +22,7 @@ print(player.find(' '))
 first_name = player[0:player.find(' ')]
 print(first_name)
 
-last_name_len = len(player[player.find('W'):])
+last_name_len = len((player[player.find(' '):])[1:])
 print(last_name_len)
 
 name_short = player[0] + '.' + player[player.find(' '):]
