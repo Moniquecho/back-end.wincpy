@@ -1,0 +1,38 @@
+# Do not modify these lines
+__winc_id__ = '7b9401ad7f544be2a23321292dd61cb6'
+__human_name__ = 'arguments'
+
+# Add your code after this line
+## part1. Greet Template
+def greet (name, greet_default='Hello, <name>!'):
+    return greet_default.replace('<name>',name)
+    
+print(greet ('Doc'))
+print(greet('Bob', "What's up, <name>!"))
+
+## part2. Force
+surface_gravity = {	
+'Sun':274,
+'Jupiter':24.92,
+'Neptune'	:11.15,
+'Saturn'	:10.44,
+'Earth'	:9.798,
+'Uranus'	:8.87,
+'Venus'	:8.87,
+'Mars'	:3.71,
+'Mercury'	:3.7,
+'Moon'	:1.62,
+'Pluto'	:0.58
+}
+def force (mass, body_default='Earth'):
+    return mass* surface_gravity[body_default]
+
+print(force (0.1))
+
+## part3. Gravity
+def pull(m1, m2, d):
+    G = 6.674*(10**(-11))
+    return G * ((m1*m2)/(d **2))
+
+print( pull(800, 1500, 3))
+print( pull(0.1, 5.972*(10**24), 6.37108*(10**6)))
