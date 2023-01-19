@@ -1,0 +1,61 @@
+__winc_id__ = "ae539110d03e49ea8738fd413ac44ba8"
+__human_name__ = "files"
+
+from importlib.metadata import files
+import os 
+import shutil 
+from zipfile import ZipFile 
+
+
+#1 Clean_cache:takes no arguments 
+# and creates an empty folder named cache in the current directory. 
+# If it already exists, it deletes everything in the cache folder.
+
+def clean_cache():
+    name = "cache"
+    if os.path.exists(os.path.join(os.getcwd(),'files', 'cache')):
+        shutil.rmtree(os.path.join(os.getcwd(),'files', 'cache'))
+    if not os.path.exists(os.path.join(os.getcwd(),'files', 'cache')):
+        os.makedirs(os.path.join(os.getcwd(),'files','cache'))
+    return f"{name} is a clean folder"
+
+print(clean_cache())
+
+#2. cache_zip: takes a zip file path (str) 
+# and a cache dir path (str) as arguments, 
+# The function then unpacks the indicated zip file into a clean cache folder.
+
+def cache_zip(zip_file_path, cache_dir_path):
+    with ZipFile(zip_file_path, "r") as zf:
+        zf.extractall(cache_dir_path)
+    return "zip_file is unpacked"
+
+cache_dir_path = os.path.join(os.getcwd(),'files', 'cache')
+zip_file_path = os.path.join(os.getcwd(),'files', 'data.zip')
+print(cache_zip(zip_file_path, cache_dir_path))
+
+#3.cached_files: takes no arguments 
+# and returns a list of all the files in the cache. 
+# The file paths should be specified in absolute terms. 
+
+def cached_files():
+    filelist = []
+    for file in os.listdir(os.path.join(os.getcwd(),'files', 'cache')):
+        absolute_path = os.path.abspath(os.path.join(os.getcwd(),'files', 'cache'))
+        filelist.append(os.path.join(absolute_path, file))
+    return filelist
+
+print(cached_files)
+
+#4. find_password: takes the list of file paths from cached_files as an argument. 
+#  This function should read the text in each one to see if the password is in there. 
+#  Surely there should be a word in there to indicate the presence of the password? Once found, find_password should return this password string.
+
+def find_password(filelist):
+    for file in filelist:
+        with open(file, "r") as fr:
+            for line in fr:
+              if "password" in line:
+                return line.replace("password: ", "").rstrip('\n')
+
+print(find_password(cached_files()))
