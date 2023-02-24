@@ -1,0 +1,66 @@
+[
+    {
+        "id": "1",
+        "product_name": "grape",
+        "buy_date": "2023-02-22",
+        "amount": "6",
+        "buy_price": "4.5",
+        "expiration_date": "2023-02-25"
+    },
+    {
+        "id": "2",
+        "product_name": "banana",
+        "buy_date": "2023-02-22",
+        "amount": "8",
+        "buy_price": "2.0",
+        "expiration_date": "2023-03-21"
+    },
+    {
+        "id": "3",
+        "product_name": "banana",
+        "buy_date": "2023-02-22",
+        "amount": "4",
+        "buy_price": "3.0",
+        "expiration_date": "2023-03-22"
+    },
+    {
+        "id": "4",
+        "product_name": "lemon",
+        "buy_date": "2023-02-22",
+        "amount": "4",
+        "buy_price": "0.7",
+        "expiration_date": "2023-04-22"
+    },
+    {
+        "id": "5",
+        "product_name": "egg",
+        "buy_date": "2023-02-22",
+        "amount": "11",
+        "buy_price": "0.5",
+        "expiration_date": "2023-03-22"
+    },
+    {
+        "id": "6",
+        "product_name": "grape",
+        "buy_date": "2023-02-22",
+        "amount": "6",
+        "buy_price": "4.5",
+        "expiration_date": "2023-03-08"
+    },
+    {
+        "id": "7",
+        "product_name": "apple",
+        "buy_date": "2023-02-22",
+        "amount": "10",
+        "buy_price": "1.0",
+        "expiration_date": "2023-03-25"
+    },
+    {
+        "id": "8",
+        "product_name": "apple",
+        "buy_date": "2023-02-22",
+        "amount": "10",
+        "buy_price": "1.0",
+        "expiration_date": "2023-03-25"
+    }
+]
